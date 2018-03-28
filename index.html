@@ -1,0 +1,256 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Vim Cheat Sheet - 正體中文</title>
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1,user-scalable=yes">
+  <meta name="description" content="A mobile friendly VIM cheat sheet">
+  <link rel="shortcut icon" sizes="32x32" href="./vim-cheat-sheet-icon-32.png">
+  <meta name="theme-color" content="#FA4949">
+  
+  <style>*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.grid-block{clear:both;letter-spacing:-.31em;display:-webkit-flex;-webkit-flex-flow:row wrap;display:-ms-flexbox;-ms-flex-flow:row wrap;overflow:hidden;text-rendering:optimizespeed;width:100%}.grid-block,.grid-1,.grid-lg-1-2,.grid-lg-1-3{display:inline-block;float:left;letter-spacing:normal;padding:0px 10px;vertical-align:top;word-spacing:normal;text-rendering:auto;width:100%;zoom:1}@media screen and (min-width: 64em){.grid-lg-1-2{width:50%}.grid-lg-1-3{width:33.3333%}}body{background-color:#fff;color:#000;font-family:Georgia, serif;font-size:16px}h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{color:inherit;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;font-weight:500;letter-spacing:normal;line-height:1.1;margin-top:20px;margin-bottom:10px}h1{font-size:45px;margin-bottom:0px;margin-top:30px}h1 a{color:#FA4949}h2{font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;font-size:24px}a{color:#1a0dab;text-decoration:none}a:hover{text-decoration:underline}p{margin:12px 0;line-height:20px;letter-spacing:normal}ul{padding:0}li{border-bottom:1px dashed #e0e0e0;line-height:1.55;list-style-type:none;padding:7px 0}kbd{background-color:#eee;color:#000;border-radius:0;box-shadow:none;font-family:'Inconsolata', monospace;font-size:1em;font-weight:bold;padding:4px}.container{background:#fff;margin:0 auto;width:100%;max-width:1170px}.well{background:#f8f8f8;border:none;border-radius:0;-webkit-box-shadow:none;box-shadow:none;min-height:20px;margin-bottom:20px;padding:19px}.link-to-repo{margin:20px 0;text-align:center}.link-to-repo p{margin-bottom:inherit}.ja{font-size:13px}.ja h2{font-size:20px}.ja kbd{font-size:16px}.box{background:#f8f8f8;border:1px solid #E7E7E7;margin:10px 0;width:100%}.box .grid-block{padding:0}.box-header{background:#EBEBEB;min-height:30px;padding:10px}.box-header h2{font-size:16px;margin:5px 0}.box-body{font-size:14px;display:block;clear:both;overflow:hidden;padding:0 10px;padding-bottom:20px}.box-body li{border-bottom:none;line-height:inherit;list-style-type:none;padding:7px 7px}@media print{html,body{height:90%}body{line-height:1.3;font-size:10px}h1{font-size:20px;margin-left:0;margin-bottom:8px;margin-top:0}h2{font-size:10px;margin-bottom:-10px;margin-top:0;line-height:10px}#footer,.link-to-repo{height:0px;display:none}.commands-container{clear:both;overflow:hidden}.commands-container>.grid-block:first-child{width:60%}.commands-container>.grid-block:last-child .grid-lg-1-3{width:50%}.grid-block{clear:none;float:left;display:inline-block;overflow:hidden;width:40%}.grid-1{padding:0;margin:0}.grid-lg-1-3{display:inline-block;float:left;letter-spacing:normal;padding:0;word-spacing:normal;text-rendering:auto;width:33.3333%;zoom:1}li{line-height:initial;padding:4px 5px}kbd{color:#000;font-size:12px;padding:0}.well{height:0px;display:none}}@page{margin:0.5cm}
+</style>
+</head>
+    <body class="zh_tw">
+  <div class="container">
+    <div class="grid-block">
+  <div class="grid-1">
+    <h1>Vim Cheat Sheet</h1>
+  </div>
+</div> <!-- end row -->
+
+    <div class="commands-container">
+      <div class="grid-block">
+        <div class="grid-lg-1-3">
+          <h2>全域</h2>
+          <ul>
+            <li><kbd>:help 關鍵字</kbd> - 顯示<kbd>關鍵字</kbd>的說明</li>
+            <li><kbd>:o 檔案名稱</kbd> - 開啟<kbd>檔案名稱<kbd></kbd></kbd></li>
+            <li><kbd>:saveas 檔案名稱</kbd> - 另存新檔為<kbd>檔案名稱</kbd></li>
+            <li><kbd>:close</kbd> - 關閉目前的視窗</li>
+            <li><kbd>K</kbd> - 開啟游標所在單字的 <code>man</code> 頁面</li>
+          </ul>
+          <h2>移動游標</h2>
+          <ul>
+            <li><kbd>h</kbd> - 向左移動游標</li>
+            <li><kbd>j</kbd> - 向下移動游標</li>
+            <li><kbd>k</kbd> - 向上移動游標</li>
+            <li><kbd>l</kbd> - 向右移動游標</li>
+            <li><kbd>H</kbd> - 跳至視窗頂端</li>
+            <li><kbd>M</kbd> - 跳至視窗中間</li>
+            <li><kbd>L</kbd> - 跳至視窗底端</li>
+            <li><kbd>w</kbd> - 向右跳至字首</li>
+            <li><kbd>W</kbd> - 向右跳至字首 (字中可含標點)</li>
+            <li><kbd>e</kbd> - 向右跳至字尾</li>
+            <li><kbd>E</kbd> - 向右跳至字尾 (字中可含標點)</li>
+            <li><kbd>b</kbd> - 向左跳至字尾</li>
+            <li><kbd>B</kbd> - 向左跳至字尾 (字中可含標點)</li>
+            <li><kbd>%</kbd> - 跳至相對應的字元 (預設支援 ()、{}、[] - 在 Vim 中使用 <kbd>:h matchpairs</kbd> 顯示說明)</li>
+            <li><kbd>0</kbd> - 跳至行首</li>
+            <li><kbd>^</kbd> - 跳至行內第一個非空白字元</li>
+            <li><kbd>$</kbd> - 跳至行尾</li>
+            <li><kbd>g_</kbd> - 跳至行內最後一個非空白字元</li>
+            <li><kbd>gg</kbd> - 跳至檔案第一行</li>
+            <li><kbd>G</kbd> - 跳至檔案最後一行</li>
+            <li><kbd>5G</kbd> - 跳至第 <code>5</code> 行</li>
+            <li><kbd>fx</kbd> - 跳至字元 <code>x</code> 下次出現的位置</li>
+            <li><kbd>tx</kbd> - 跳至字元 <code>x</code> 下次出現位置的上一個字元</li>
+            <li><kbd>Fx</kbd> - 跳至字元 <code>x</code> 上次出現的位置</li>
+            <li><kbd>Tx</kbd> - 跳至字元 <code>x</code> 下次出現位置的下一個字元</li>
+            <li><kbd>;</kbd> - 重複前一個 <code>f</code>, <code>t</code>, <code>F</code> 或 <code>T</code></li>
+            <li><kbd>,</kbd> - 同 <kbd>;</kbd> 但方向相反</li>
+            <li><kbd>}</kbd> - 跳至下一段 (若編輯程式碼則為函式/區塊)</li>
+            <li><kbd>{</kbd> - 跳至上一段 (若編輯程式碼則為函式/區塊)</li>
+            <li><kbd>zz</kbd> - 將游標所在行移到視窗中間</li>
+            <li><kbd>Ctrl</kbd> + <kbd>b</kbd> - 向上捲動一個視窗</li>
+            <li><kbd>Ctrl</kbd> + <kbd>f</kbd> - 向下捲動一個視窗</li>
+            <li><kbd>Ctrl</kbd> + <kbd>d</kbd> - 向下捲動半個視窗</li>
+            <li><kbd>Ctrl</kbd> + <kbd>u</kbd> - 向上捲動半個視窗</li>
+          </ul>
+          <div class="well">
+            <strong>Tip</strong> 移動游標的命令前加數字可指定重複次數，例如 <kbd>4j</kbd> 會向下移動 <code>4</code> 行。
+          </div>
+          <h2>插入模式 - 插入/附加文字</h2>
+          <ul>
+            <li><kbd>i</kbd> - 在游標前開始插入字元</li>
+            <li><kbd>I</kbd> - 在行首開始插入字元</li>
+            <li><kbd>a</kbd> - 在游標後開始插入字元</li>
+            <li><kbd>A</kbd> - 在行尾開始插入字元</li>
+            <li><kbd>o</kbd> - 在該行之下另起一行，開始插入字元</li>
+            <li><kbd>O</kbd> - 在該行之上另起一行，開始插入字元</li>
+            <li><kbd>ea</kbd> - 在該單字字尾開始插入字元</li>
+            <li><kbd>Esc</kbd> - 退出插入模式</li>
+          </ul>
+        </div>
+        <div class="grid-lg-1-3">
+          <h2>編輯</h2>
+          <ul>
+            <li><kbd>r</kbd> - 變更 (取代) 游標後一個字元</li>
+            <li><kbd>R</kbd> - 變更 (取代) 至行末</li>
+            <li><kbd>J</kbd> - 將下一行合併至該行</li>
+            <li><kbd>gJ</kbd> - 同 <kbd>J</kbd>，但兩行之間不插入空白</li>
+            <li><kbd>cc</kbd> - 變更 (取代) 整行</li>
+            <li><kbd>cw</kbd> - 從游標位置開始變更 (取代) 單字</li>
+            <li><kbd>c$</kbd> - 從游標位置開始變更 (取代) 該行</li>
+            <li><kbd>s</kbd> - 刪除游標後字元並進入插入模式</li>
+            <li><kbd>S</kbd> - 刪除整行並進入插入模式 (同 <kbd>cc</kbd>)</li>
+            <li><kbd>xp</kbd> - 游標後二個字元位置交換 (刪除並貼上)</li>
+            <li><kbd>u</kbd> - 復原</li>
+            <li><kbd>Ctrl</kbd> + <kbd>r</kbd> - 重做</li>
+            <li><kbd>.</kbd> - 重複上個命令</li>
+          </ul>
+          <h2>選取文字（標示模式）</h2>
+          <ul>
+            <li><kbd>v</kbd> - 進入標示模式 (字元選取)，並執行命令 (如 <kbd>y</kbd> - 複製)</li>
+            <li><kbd>V</kbd> - 進入標示模式 (行選取)</li>
+            <li><kbd>o</kbd> - 跳至選取區塊的開頭/結尾</li>
+            <li><kbd>Ctrl</kbd> + <kbd>v</kbd> - 進入標示模式 (區塊選取)</li>
+            <li><kbd>O</kbd> - 跳至選取區塊的角落</li>
+            <li><kbd>aw</kbd> - 選取該單字</li>
+            <li><kbd>ab</kbd> - 選取 () 及所包圍的區塊</li>
+            <li><kbd>aB</kbd> - 選取 {} 及所包圍的區塊</li>
+            <li><kbd>ib</kbd> - 選取 () 內的區塊</li>
+            <li><kbd>iB</kbd> - 選取 {} 內的區塊</li>
+            <li><kbd>Esc</kbd> - 退出標示模式</li>
+          </ul>
+          <h2>標示模式命令</h2>
+          <ul>
+            <li><kbd>&gt;</kbd> - 向右縮排</li>
+            <li><kbd>&lt;</kbd> - 向左縮排</li>
+            <li><kbd>y</kbd> - 複製</li>
+            <li><kbd>d</kbd> - 剪下</li>
+            <li><kbd>~</kbd> - 切換大小寫</li>
+          </ul>
+          <h2>暫存區</h2>
+          <ul>
+            <li><kbd>:reg</kbd> - 顯示暫存區內容</li>
+            <li><kbd>"xy</kbd> - 複製到暫存區 <code>x</code></li>
+            <li><kbd>"xp</kbd> - 貼上暫存區 <code>x</code> 的內容</li>
+          </ul>
+          <div class="well">
+            <strong>Tip</strong> 暫存區儲存在 <code>~/.viminfo</code>，且會在 Vim 下次啟動時重新載入。
+          </div>
+          <div class="well">
+            <strong>Tip</strong> 暫存區 <code>0</code> 一律會保存上一次複製的內容。
+          </div>
+          <h2>標記</h2>
+          <ul>
+            <li><kbd>:marks</kbd> - 顯示標記清單</li>
+            <li><kbd>ma</kbd> - 將目前的位置設為標記 <code>a</code></li>
+            <li><kbd>`a</kbd> - 跳至標記 <code>a</code></li>
+            <li><kbd>y`a</kbd> - 複製游標目前位置到標記 <code>a</code> 位置的字元</li>
+          </ul>
+          <h2>巨集</h2>
+          <ul>
+            <li><kbd>qa</kbd> - 錄製巨集 <code>a</code></li>
+            <li><kbd>q</kbd> - 停止錄製巨集</li>
+            <li><kbd>@a</kbd> - 執行巨集 <code>a</code></li>
+            <li><kbd>@@</kbd> - 執行上一次執行的巨集</li>
+          </ul>
+        </div>
+        <div class="grid-lg-1-3">
+          <h2>剪下、複製、貼上</h2>
+          <ul>
+            <li><kbd>yy</kbd> - 複製該行</li>
+            <li><kbd>2yy</kbd> - 複製 <code>2</code> 行</li>
+            <li><kbd>yw</kbd> - 複製該單字</li>
+            <li><kbd>y$</kbd> - 複製游標位置到行尾的區塊</li>
+            <li><kbd>p</kbd> - 在游標後貼上</li>
+            <li><kbd>P</kbd> - 在游標前貼上</li>
+            <li><kbd>dd</kbd> - 剪下 (刪除) 該行</li>
+            <li><kbd>2dd</kbd> - 剪下 (刪除) <code>2</code> 行</li>
+            <li><kbd>dw</kbd> - 剪下 (刪除) 該單字</li>
+            <li><kbd>D</kbd> - 剪下 (刪除) 游標位置到行尾的區塊</li>
+            <li><kbd>d$</kbd> - 剪下 (刪除) 游標位置到行尾的區塊 (同 <kbd>D</kbd>)</li>
+            <li><kbd>x</kbd> - 剪下 (刪除) 該單字</li>
+            <li><kbd>:5,8co2</kbd> - 將5-8行複製到第2行下面</li>
+            <li><kbd>:5,8m2</kbd> - 將5-8行移動到第2行下面</li>
+            <li><kbd>:5,8d</kbd> - 刪除5-8行</li>
+            <li><kbd>:m+</kbd> - 將目前行向下移動一行</li>
+            <li><kbd>:m-2</kbd> - 將目前行向上移動一行</li>
+            <li><kbd>Ctrl</kbd> + <kbd>y</kbd> - 在 modeless selection 下複製選區至系統剪貼簿</li>
+          </ul>
+          <h2>退出</h2>
+          <ul>
+            <li><kbd>:w</kbd> - 儲存</li>
+            <li><kbd>:w !sudo tee %</kbd> - 以 <code>sudo</code> 儲存目前的檔案</li>
+            <li><kbd>:wq</kbd> or <kbd>:x</kbd> or <kbd>ZZ</kbd> - 儲存並退出</li>
+            <li><kbd>:q</kbd> - 退出 (修改未儲存時警告)</li>
+            <li><kbd>:q!</kbd> or <kbd>ZQ</kbd> - 強制退出 (不儲存)</li>
+            <li><kbd>:wqa</kbd> - write (save) and quit on all tabs</li>
+          </ul>
+          <h2>尋找、取代</h2>
+          <ul>
+            <li><kbd>/pattern</kbd> - 尋找 <kbd>pattern</kbd></li>
+            <li><kbd>?pattern</kbd> - 向上尋找 <kbd>pattern</kbd></li>
+            <li><kbd>\vpattern</kbd> - <kbd>pattern</kbd> 中的非英數字元皆視為正規表示式的特殊字元 (不需跳脫字元)</li>
+            <li><kbd>n</kbd> - 尋找下一個</li>
+            <li><kbd>N</kbd> - 尋找上一個</li>
+            <li><kbd>gn</kbd> - 選取下一個</li>
+            <li><kbd>gN</kbd> - 選取上一個</li>
+            <li><kbd>ygn</kbd> - 複製下一個</li>
+            <li><kbd>ygN</kbd> - 複製上一個</li>
+            <li><kbd>:%s/old/new/g</kbd> - 全部取代</li>
+            <li><kbd>:%s/old/new/gc</kbd> - 逐項取代</li>
+            <li><kbd>:noh</kbd> - 移除搜尋結果的標示</li>
+          </ul>
+          <h2>多檔案搜尋</h2>
+          <ul>
+            <li><kbd>:vimgrep /pattern/ {file}</kbd> - 在多個檔案中搜尋 <kbd>pattern</kbd></li>
+          </ul>
+          <div class="well">
+            e.g.
+            <kbd>:vimgrep /foo/ **/*</kbd>
+          </div>
+          <ul>
+            <li><kbd>:cn</kbd> - 跳至下一個</li>
+            <li><kbd>:cp</kbd> - 跳至上一個</li>
+            <li><kbd>:copen</kbd> - 開啟搜尋結果列表視窗</li>
+          </ul>
+        </div>
+      </div>
+      <!-- end grid-block -->
+      <div class="grid-block">
+        <div class="grid-lg-1-3">
+          <h2>多檔案編輯</h2>
+          <ul>
+            <li><kbd>:e 檔案名稱</kbd> - 在新緩衝區開啟<kbd>檔案名稱</kbd></li>
+            <li><kbd>:bnext</kbd> or <kbd>:bn</kbd> - 切換到下個緩衝區</li>
+            <li><kbd>:bprev</kbd> or <kbd>:bp</kbd> - 切換到上個緩衝區</li>
+            <li><kbd>:bd</kbd> - 刪除緩衝區 (關閉檔案)</li>
+            <li><kbd>:ls</kbd> - 列出所有開啟的緩衝區</li>
+            <li><kbd>:sp 檔案名稱</kbd> - 在新緩衝區開啟<kbd>檔案名稱</kbd>並水平分割視窗</li>
+            <li><kbd>:vsp 檔案名稱</kbd> - 在新緩衝區開啟<kbd>檔案名稱</kbd>並垂直分割視窗</li>
+            <li><kbd>Ctrl</kbd> + <kbd>ws</kbd> - 水平分割視窗</li>
+            <li><kbd>Ctrl</kbd> + <kbd>ww</kbd> - 切換視窗</li>
+            <li><kbd>Ctrl</kbd> + <kbd>wq</kbd> - 關閉視窗</li>
+            <li><kbd>Ctrl</kbd> + <kbd>wv</kbd> - 垂直分割視窗</li>
+            <li><kbd>Ctrl</kbd> + <kbd>wh</kbd> - 游標跳至左視窗 (垂直分割)</li>
+            <li><kbd>Ctrl</kbd> + <kbd>wl</kbd> - 游標跳至右視窗 (垂直分割)</li>
+            <li><kbd>Ctrl</kbd> + <kbd>wj</kbd> - 游標跳至下視窗 (水平分割)</li>
+            <li><kbd>Ctrl</kbd> + <kbd>wk</kbd> - 游標跳至上視窗 (水平分割)</li>
+          </ul>
+        </div>
+        <div class="grid-lg-1-3">
+          <h2>分頁</h2>
+          <ul>
+            <li><kbd>:tabe</kbd> or <kbd>:tabnew 檔案名稱</kbd> - 在新分頁開啟<kbd>檔案名稱</kbd></li>
+            <li><kbd>Ctrl</kbd> + <kbd>wT</kbd> - 以新分頁開啟視窗</li>
+            <li><kbd>gt</kbd> or <kbd>:tabnext</kbd> or <kbd>:tabn</kbd> - 切換到下個分頁</li>
+            <li><kbd>gT</kbd> or <kbd>:tabprev</kbd> or <kbd>:tabp</kbd> - 切換到上個分頁</li>
+            <li><kbd>#gt</kbd> - 切換到第 <code>#</code> 個分頁</li>
+            <li><kbd>:tabmove #</kbd> - 將分頁移到第 <code>#</code> 位 (從 <code>0</code> 算起)</li>
+            <li><kbd>:tabclose</kbd> or <kbd>:tabc</kbd> - 關閉該分頁及其中所有視窗</li>
+            <li><kbd>:tabonly</kbd> or <kbd>:tabo</kbd> - 關閉所有其他分頁</li>
+            <li><kbd>:tabdo</kbd> command - 對所有分頁執行命令 (例如 <kbd>:tabdo q</kbd> 會關閉所有分頁)</li>
+          </ul>
+        </div>
+      </div>
+      <!-- end grid-block -->
+    </div>
+    <div>
+
+  <div class="grid-block link-to-repo">
+    <p>Checkout the source on <a href="https://github.com/rtorr/vim-cheat-sheet" target="_blank" rel="noopener">Github</a></p>
+  </div>
+</div>
+
